@@ -1,0 +1,572 @@
+.business {
+  position: relative;
+  padding: 180px 0;
+  background: #050608;
+  overflow: hidden;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.business-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 90px;
+}
+
+.business-eyebrow {
+  display: block;
+  margin-bottom: 24px;
+
+  color: var(--hbl-blue-light);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.business-header h2 {
+  max-width: 850px;
+
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: 0.9;
+
+  letter-spacing: -0.07em;
+  font-weight: 800;
+}
+
+.business-header h2 span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px
+    rgba(255, 255, 255, 0.55);
+}
+
+.business-header p {
+  width: 340px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   BUSINESS GRID
+========================================= */
+
+.business-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  min-height: 650px;
+}
+
+
+/* =========================================
+   BUSINESS CARD
+========================================= */
+
+.business-card {
+  position: relative;
+
+  min-height: 650px;
+
+  padding: 42px;
+
+  overflow: hidden;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+
+  background: #0a0d11;
+
+  transition:
+    flex 0.7s var(--ease),
+    background 0.5s ease;
+}
+
+.business-card:first-child {
+  border-left: 1px solid var(--border);
+}
+
+
+/* =========================================
+   CARD BACKGROUND
+========================================= */
+
+.business-card-background {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.7s ease,
+    transform 1s var(--ease);
+
+  transform: scale(1.08);
+}
+
+.business-card:hover
+.business-card-background {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+/* Individual background treatments */
+
+.business-card:nth-child(1)
+.business-card-background {
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(0, 87, 184, 0.4),
+      transparent 50%
+    );
+}
+
+.business-card:nth-child(2)
+.business-card-background {
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(160, 90, 20, 0.3),
+      transparent 50%
+    );
+}
+
+.business-card:nth-child(3)
+.business-card-background {
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(20, 150, 170, 0.28),
+      transparent 50%
+    );
+}
+
+
+/* =========================================
+   GRID / TECHNICAL PATTERN
+========================================= */
+
+.business-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.07;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.business-card-content {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* NUMBER */
+
+.business-number {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.business-number::after {
+  content: "";
+
+  width: 35px;
+  height: 1px;
+
+  background:
+    rgba(255,255,255,0.2);
+}
+
+
+/* =========================================
+   VISUAL
+========================================= */
+
+.business-visual {
+  position: absolute;
+
+  left: 50%;
+  top: 48%;
+
+  width: 260px;
+  height: 260px;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Core */
+
+.business-core {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ffffff,
+      var(--hbl-blue)
+    );
+
+  box-shadow:
+    0 0 60px
+    rgba(0, 87, 184, 0.35);
+
+  transition:
+    transform 0.8s var(--ease);
+}
+
+.business-card:hover
+.business-core {
+  transform: scale(1.18);
+}
+
+
+/* Rings */
+
+.business-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255,255,255,0.12);
+
+  transition:
+    transform 1s var(--ease);
+}
+
+.business-ring-one {
+  width: 150px;
+  height: 150px;
+}
+
+.business-ring-two {
+  width: 220px;
+  height: 220px;
+}
+
+.business-ring-three {
+  width: 300px;
+  height: 300px;
+}
+
+.business-card:hover
+.business-ring-one {
+  transform: rotate(30deg) scale(1.08);
+}
+
+.business-card:hover
+.business-ring-two {
+  transform: rotate(-25deg) scale(1.05);
+}
+
+.business-card:hover
+.business-ring-three {
+  transform: rotate(15deg) scale(1.02);
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.business-title {
+  margin-top: auto;
+
+  max-width: 400px;
+
+  font-size: clamp(
+    32px,
+    3vw,
+    52px
+  );
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 800;
+}
+
+.business-title span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px
+    rgba(255,255,255,0.5);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.business-description {
+  max-width: 330px;
+
+  margin-top: 22px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s var(--ease);
+}
+
+.business-card:hover
+.business-description {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   EXPLORE LINK
+========================================= */
+
+.business-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  width: fit-content;
+
+  margin-top: 25px;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid
+    rgba(255,255,255,0.35);
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0;
+
+  transform: translateY(12px);
+
+  transition:
+    opacity 0.5s ease 0.05s,
+    transform 0.5s var(--ease) 0.05s;
+}
+
+.business-card:hover
+.business-link {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.business-link svg {
+  transition:
+    transform 0.3s ease;
+}
+
+.business-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   BOTTOM LABEL
+========================================= */
+
+.business-bottom {
+  position: absolute;
+
+  bottom: 42px;
+  right: 42px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  writing-mode: vertical-rl;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   HOVER ACTIVE EFFECT
+========================================= */
+
+.business-card:hover {
+  background: #0d1117;
+}
+
+.business-card:hover .business-number {
+  color: white;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .business {
+    padding: 130px 0;
+  }
+
+  .business-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 35px;
+  }
+
+  .business-header p {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-card {
+    min-height: 520px;
+
+    border-left: 1px solid var(--border);
+
+    border-bottom: none;
+  }
+
+  .business-card:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .business-description,
+  .business-link {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .business {
+    padding: 100px 0;
+  }
+
+  .business-header {
+    margin-bottom: 55px;
+  }
+
+  .business-header h2 {
+    font-size: 52px;
+  }
+
+  .business-card {
+    min-height: 470px;
+
+    padding: 28px;
+  }
+
+  .business-visual {
+    transform:
+      translate(-50%, -50%)
+      scale(0.78);
+  }
+
+  .business-title {
+    font-size: 38px;
+  }
+
+  .business-description {
+    font-size: 12px;
+  }
+
+  .business-bottom {
+    right: 25px;
+    bottom: 28px;
+  }
+
+}

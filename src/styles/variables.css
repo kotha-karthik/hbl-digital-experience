@@ -1,0 +1,25 @@
+:root {
+  --hbl-blue: #0057b8;
+  --hbl-blue-light: #1677d2;
+
+  --black: #050608;
+  --surface: #0b0d10;
+  --surface-light: #12161b;
+
+  --white: #ffffff;
+  --text-primary: #f5f7fa;
+  --text-secondary: #9ba3ad;
+  --text-muted: #69717c;
+
+  --border: rgba(255, 255, 255, 0.1);
+
+  --container: 1440px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+
+  --nav-height: 88px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
